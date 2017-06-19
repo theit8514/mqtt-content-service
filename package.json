@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A simple content-based MQTT service",
   "main": "index.js",
+  "bin": "./bin/mqtt-content-service",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "patch-release": "npm version patch && npm publish && git push --follow-tags"
