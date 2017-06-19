@@ -1,0 +1,18 @@
+{
+  "name": "mqtt-content-service",
+  "version": "1.0.0",
+  "description": "A simple content-based MQTT service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "patch-release": "npm version patch && npm publish && git push --follow-tags"
+  },
+  "author": "theit8514",
+  "license": "MIT",
+  "dependencies": {
+    "argparse": "^1.0.9",
+    "mqtt": "^2.9.0",
+    "os-service": "^1.4.1",
+    "sanitize-filename": "^1.6.1"
+  }
+}

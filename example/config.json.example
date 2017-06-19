@@ -1,0 +1,10 @@
+{
+	"url": "mqtt://localhost",
+	"connect_options": {
+		"username": "",
+		"password": ""
+	},
+	"subs": {
+		"fff/download": "node example/processDownload.js \"${message}\""
+	}
+}
