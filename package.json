@@ -1,6 +1,6 @@
 {
   "name": "mqtt-content-service",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple content-based MQTT service",
   "main": "index.js",
   "bin": "./bin/mqtt-content-service",
