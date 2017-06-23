@@ -79,10 +79,7 @@ if (args.help_config) {
 		}
 	};
 	console.log(JSON.stringify(sample_config, null, 4));
-	return;
-}
-
-if (args.add !== null) {
+} else if (args.add !== null) {
 	var name = args.add[0];
 	var config = args.add[1];
 	var options = {
@@ -99,19 +96,13 @@ if (args.add !== null) {
 		if (error)
 			console.error(error.toString());
 	});
-	return;
-}
-
-if (args.remove !== null) {
+} else if (args.remove !== null) {
 	var name = args.remove[0];
 	service.remove(name, function(error) {
 		if (error)
 			console.error(error.toString());
 	});
-	return;
-}
-
-if (args.run !== null) {
+} else if (args.run !== null) {
 	var name = args.run[0];
 	var config = args.run[1];
 
@@ -132,6 +123,6 @@ if (args.run !== null) {
 		service.stop(1);
 	});
 	console.log('Started service ' + name + '...');
+} else {
+	parser.printHelp();
 }
-
-parser.printHelp();
