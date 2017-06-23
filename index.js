@@ -4,6 +4,7 @@ var fs = require('fs');
 var service = require('os-service');
 var path = require('path');
 var sanitize = require('sanitize-filename');
+var replaceExt = require('replace-ext');
 
 var serviceName = 'mqtt-service';
 var scriptPath = process.argv[1];
@@ -116,7 +117,8 @@ if (args.run !== null) {
 
 	var client = require('./lib/client');
 	var cl = new client.Client(config);
-	var logStream = fs.createWriteStream(scriptPath + '.' + sanitize(name) + '.log');
+	var logPath = replaceExt(config, '.' + sanitize(name) + '.log');
+	var logStream = fs.createWriteStream(logPath);
 	service.run(logStream, function() {
 		console.log('Stopping service ' + name + '...');
 		cl.stopServer();

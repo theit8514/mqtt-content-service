@@ -1,1 +1,1 @@
-node index.js --run myservice ./example/config.json.example
+node index.js --run myservice ./example/example.json
