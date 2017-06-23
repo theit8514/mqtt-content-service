@@ -125,9 +125,13 @@ if (args.run !== null) {
 		service.stop(0);
 	});
 
-	cl.runServer();
+	cl.runServer().catch(function(err) {
+		console.log('Error occurred in service: ' + err);
+		try { cl.stopServer(); }
+		catch(e) { }
+		service.stop(1);
+	});
 	console.log('Started service ' + name + '...');
-	return;
 }
 
 parser.printHelp();
