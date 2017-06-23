@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "patch-release": "npm version patch && npm publish && git push --follow-tags"
   },
+  "repository": "theit8514/mqtt-content-service",
   "author": "theit8514",
   "license": "MIT",
   "dependencies": {
